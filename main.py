@@ -1,11 +1,13 @@
 
+from random import random
 class Pos:
     def __init__(self, x, y):
         self.x = x;
         self.y = y;
 
-tab = [[" " for i in range(5)] for i in range(5)]
-cur = Pos(1, 2);
+size = 30
+tab = [[" " for i in range(size)] for i in range(size)]
+cur = Pos(4, 27);
 
 tab[cur.y][cur.x] = "$"
 
@@ -18,7 +20,7 @@ while(any(flags)):
     else:
         flags[0]=False;
         
-    if cur.y+inc < 5:
+    if cur.y+inc < size:
         tab[cur.y+inc][cur.x] = "*";
     else:
         flags[1]=False;
@@ -28,7 +30,7 @@ while(any(flags)):
     else:
         flags[2]=False;
         
-    if cur.x+inc < 5:
+    if cur.x+inc < size:
         tab[cur.y][cur.x+inc] = "*";
     else:
         flags[3]=False;
